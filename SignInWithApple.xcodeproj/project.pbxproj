@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C186DC67265980010010D50E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C186DC66265980010010D50E /* ResultViewController.swift */; };
+		C186DC6926598BD00010D50E /* KeychainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C186DC6826598BD00010D50E /* KeychainItem.swift */; };
 		C1DB5E55265967190013ED36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DB5E54265967190013ED36 /* AppDelegate.swift */; };
 		C1DB5E57265967190013ED36 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DB5E56265967190013ED36 /* SceneDelegate.swift */; };
 		C1DB5E59265967190013ED36 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DB5E58265967190013ED36 /* LoginViewController.swift */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		C186DC65265979A30010D50E /* SignInWithApple.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SignInWithApple.entitlements; sourceTree = "<group>"; };
 		C186DC66265980010010D50E /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		C186DC6826598BD00010D50E /* KeychainItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainItem.swift; sourceTree = "<group>"; };
 		C1DB5E51265967190013ED36 /* SignInWithApple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignInWithApple.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1DB5E54265967190013ED36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1DB5E56265967190013ED36 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 		C105316026596C2300BEE594 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C186DC6826598BD00010D50E /* KeychainItem.swift */,
 				C1DB5E5D2659671A0013ED36 /* Assets.xcassets */,
 				C1DB5E5F2659671A0013ED36 /* LaunchScreen.storyboard */,
 				C1DB5E622659671A0013ED36 /* Info.plist */,
@@ -152,6 +155,7 @@
 			files = (
 				C1DB5E59265967190013ED36 /* LoginViewController.swift in Sources */,
 				C1DB5E55265967190013ED36 /* AppDelegate.swift in Sources */,
+				C186DC6926598BD00010D50E /* KeychainItem.swift in Sources */,
 				C1DB5E57265967190013ED36 /* SceneDelegate.swift in Sources */,
 				C186DC67265980010010D50E /* ResultViewController.swift in Sources */,
 			);
