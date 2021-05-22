@@ -37,6 +37,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C105316026596C2300BEE594 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C1DB5E5D2659671A0013ED36 /* Assets.xcassets */,
+				C1DB5E5F2659671A0013ED36 /* LaunchScreen.storyboard */,
+				C1DB5E622659671A0013ED36 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		C1DB5E48265967190013ED36 = {
 			isa = PBXGroup;
 			children = (
@@ -60,9 +70,7 @@
 				C1DB5E56265967190013ED36 /* SceneDelegate.swift */,
 				C1DB5E58265967190013ED36 /* ViewController.swift */,
 				C1DB5E5A265967190013ED36 /* Main.storyboard */,
-				C1DB5E5D2659671A0013ED36 /* Assets.xcassets */,
-				C1DB5E5F2659671A0013ED36 /* LaunchScreen.storyboard */,
-				C1DB5E622659671A0013ED36 /* Info.plist */,
+				C105316026596C2300BEE594 /* Supporting Files */,
 			);
 			path = SignInWithApple;
 			sourceTree = "<group>";
@@ -288,7 +296,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F9Y6SPBV9F;
-				INFOPLIST_FILE = SignInWithApple/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SignInWithApple/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +315,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F9Y6SPBV9F;
-				INFOPLIST_FILE = SignInWithApple/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SignInWithApple/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
