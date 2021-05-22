@@ -40,7 +40,22 @@ final class LoginViewController: UIViewController {
 
 // MARK: - ASAuthorizationControllerDelegate
 extension LoginViewController: ASAuthorizationControllerDelegate {
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        switch authorization.credential {
+        case let appleIDCredential as ASAuthorizationAppleIDCredential:
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let resultViewController = storyboard.instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController {
+                resultViewController.appleIDCredential = appleIDCredential
+                self.present(resultViewController, animated: true, completion: nil)
+            }
+        default:
+            break
+        }
+    }
     
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        // Handle error.
+    }
 }
 
 // MARK: - ASAuthorizationControllerPresentationContextProviding

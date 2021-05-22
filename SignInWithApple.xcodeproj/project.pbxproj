@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C186DC67265980010010D50E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C186DC66265980010010D50E /* ResultViewController.swift */; };
 		C1DB5E55265967190013ED36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DB5E54265967190013ED36 /* AppDelegate.swift */; };
 		C1DB5E57265967190013ED36 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DB5E56265967190013ED36 /* SceneDelegate.swift */; };
 		C1DB5E59265967190013ED36 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DB5E58265967190013ED36 /* LoginViewController.swift */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		C186DC65265979A30010D50E /* SignInWithApple.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SignInWithApple.entitlements; sourceTree = "<group>"; };
+		C186DC66265980010010D50E /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		C1DB5E51265967190013ED36 /* SignInWithApple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignInWithApple.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1DB5E54265967190013ED36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1DB5E56265967190013ED36 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				C1DB5E54265967190013ED36 /* AppDelegate.swift */,
 				C1DB5E56265967190013ED36 /* SceneDelegate.swift */,
 				C1DB5E58265967190013ED36 /* LoginViewController.swift */,
+				C186DC66265980010010D50E /* ResultViewController.swift */,
 				C1DB5E5A265967190013ED36 /* Main.storyboard */,
 				C105316026596C2300BEE594 /* Supporting Files */,
 			);
@@ -150,6 +153,7 @@
 				C1DB5E59265967190013ED36 /* LoginViewController.swift in Sources */,
 				C1DB5E55265967190013ED36 /* AppDelegate.swift in Sources */,
 				C1DB5E57265967190013ED36 /* SceneDelegate.swift in Sources */,
+				C186DC67265980010010D50E /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
