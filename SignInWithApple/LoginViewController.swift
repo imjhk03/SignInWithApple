@@ -6,16 +6,27 @@
 //
 
 import UIKit
+import AuthenticationServices
 
-class LoginViewController: UIViewController {
-
+final class LoginViewController: UIViewController {
+    
+    @IBOutlet private weak var loginProviderStackView: UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        view.backgroundColor = .systemGreen
+        setupProviderLoginView()
     }
 
+    private func setupProviderLoginView() {
+        let button = ASAuthorizationAppleIDButton()
+        button.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
+        loginProviderStackView.addArrangedSubview(button)
+    }
+    
+    @objc
+    private func handleAuthorizationAppleIDButtonPress() {
+        
+    }
 
 }
 
