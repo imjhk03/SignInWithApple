@@ -16,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C186DC65265979A30010D50E /* SignInWithApple.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SignInWithApple.entitlements; sourceTree = "<group>"; };
 		C1DB5E51265967190013ED36 /* SignInWithApple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignInWithApple.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1DB5E54265967190013ED36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1DB5E56265967190013ED36 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +67,7 @@
 		C1DB5E53265967190013ED36 /* SignInWithApple */ = {
 			isa = PBXGroup;
 			children = (
+				C186DC65265979A30010D50E /* SignInWithApple.entitlements */,
 				C1DB5E54265967190013ED36 /* AppDelegate.swift */,
 				C1DB5E56265967190013ED36 /* SceneDelegate.swift */,
 				C1DB5E58265967190013ED36 /* LoginViewController.swift */,
@@ -294,6 +296,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SignInWithApple/SignInWithApple.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F9Y6SPBV9F;
 				INFOPLIST_FILE = "$(SRCROOT)/SignInWithApple/Supporting Files/Info.plist";
@@ -313,6 +316,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SignInWithApple/SignInWithApple.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F9Y6SPBV9F;
 				INFOPLIST_FILE = "$(SRCROOT)/SignInWithApple/Supporting Files/Info.plist";
