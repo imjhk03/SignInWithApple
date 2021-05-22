@@ -25,8 +25,30 @@ final class LoginViewController: UIViewController {
     
     @objc
     private func handleAuthorizationAppleIDButtonPress() {
+        let request = ASAuthorizationAppleIDProvider().createRequest()
+        request.requestedScopes = [.fullName, .email]
         
+        let controller = ASAuthorizationController(authorizationRequests: [request])
+        
+        controller.delegate = self
+        controller.presentationContextProvider = self
+        
+        controller.performRequests()
     }
 
+}
+
+// MARK: - ASAuthorizationControllerDelegate
+extension LoginViewController: ASAuthorizationControllerDelegate {
+    
+}
+
+// MARK: - ASAuthorizationControllerPresentationContextProviding
+extension LoginViewController: ASAuthorizationControllerPresentationContextProviding {
+    
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        self.view.window!
+    }
+    
 }
 
