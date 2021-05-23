@@ -132,7 +132,7 @@ struct KeychainItem {
      */
     static var currentUserIdentifier: String {
         do {
-            let storedIdentifier = try KeychainItem(service: "me.jooheekim.SignInWithApple", account: "userIdentifier").readItem()
+            let storedIdentifier = try KeychainItem(service: "me.jhk.SignInWithApple", account: "userIdentifier").readItem()
             return storedIdentifier
         } catch {
             return ""
@@ -141,7 +141,7 @@ struct KeychainItem {
     
     static func deleteUserIdentifierFromKeychain() {
         do {
-            try KeychainItem(service: "me.jooheekim.SignInWithApple", account: "userIdentifier").deleteItem()
+            try KeychainItem(service: "me.jhk.SignInWithApple", account: "userIdentifier").deleteItem()
         } catch {
             print("Unable to delete userIdentifier from keychain")
         }
