@@ -8,7 +8,7 @@
 
 
 ## About the project
-A sample project about using Sign in with Apple. This project was built while watching the [session](https://developer.apple.com/videos/play/wwdc2019/706/) and referred to the [sample code](https://developer.apple.com/documentation/authenticationservices/implementing_user_authentication_with_sign_in_with_apple).
+A sample project implementing Sign in with Apple. This project was built while watching the [session](https://developer.apple.com/videos/play/wwdc2019/706/) and referred to the [sample code](https://developer.apple.com/documentation/authenticationservices/implementing_user_authentication_with_sign_in_with_apple).
 
 ## Features
 * Creates a Sign in with Apple Button
