@@ -16,6 +16,11 @@ final class LoginViewController: UIViewController {
         super.viewDidLoad()
         setupProviderLoginView()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        performExistingAccountSetupFlows()
+    }
 
     private func setupProviderLoginView() {
         let button = ASAuthorizationAppleIDButton()
@@ -33,11 +38,24 @@ final class LoginViewController: UIViewController {
         controller.presentationContextProvider = self
         controller.performRequests()
     }
-
+    
+    // Checks if the user has an existing account by requesting both an Apple ID and an iCloud keychain password
+    private func performExistingAccountSetupFlows() {
+        // Prepare requests for both Apple ID and password providers.
+        let requests = [ASAuthorizationAppleIDProvider().createRequest(),
+                        ASAuthorizationPasswordProvider().createRequest()]
+        
+        let authorizationController = ASAuthorizationController(authorizationRequests: requests)
+        authorizationController.delegate = self
+        authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
+    }
+    
 }
 
 // MARK: - ASAuthorizationControllerDelegate
 extension LoginViewController: ASAuthorizationControllerDelegate {
+    // Checks whether the credential is an Apple ID (ASAuthorizationAppleIDCredential) or a password credential (ASPasswordCredential)
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         switch authorization.credential {
         case let appleIDCredential as ASAuthorizationAppleIDCredential:
@@ -48,6 +66,15 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
             
             // Show the Apple ID credential information in the 'ResultViewController'
             showResultViewController(appleIDCredential: appleIDCredential)
+        case let passwordCredential as ASPasswordCredential:
+            // Sign in using an existing iCloud Keychain credential.
+            let username = passwordCredential.user
+            let password = passwordCredential.password
+            
+            // For the purpose of this demo app, show the password credential as an alert.
+            DispatchQueue.main.async {
+                self.showPasswordCredentialAlert(username: username, password: password)
+            }
         default:
             break
         }
@@ -67,6 +94,15 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
             resultViewController.appleIDCredential = appleIDCredential
             self.present(resultViewController, animated: true, completion: nil)
         }
+    }
+    
+    private func showPasswordCredentialAlert(username: String, password: String) {
+        let message = "The app has received your selected credential from the keychain. \n\n Username: \(username)\n Password: \(password)"
+        let alertController = UIAlertController(title: "Keychain Credential Received",
+                                                message: message,
+                                                preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
