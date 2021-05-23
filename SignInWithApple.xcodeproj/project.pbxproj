@@ -10,7 +10,6 @@
 		C186DC67265980010010D50E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C186DC66265980010010D50E /* ResultViewController.swift */; };
 		C186DC6926598BD00010D50E /* KeychainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C186DC6826598BD00010D50E /* KeychainItem.swift */; };
 		C1DB5E55265967190013ED36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DB5E54265967190013ED36 /* AppDelegate.swift */; };
-		C1DB5E57265967190013ED36 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DB5E56265967190013ED36 /* SceneDelegate.swift */; };
 		C1DB5E59265967190013ED36 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DB5E58265967190013ED36 /* LoginViewController.swift */; };
 		C1DB5E5C265967190013ED36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1DB5E5A265967190013ED36 /* Main.storyboard */; };
 		C1DB5E5E2659671A0013ED36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1DB5E5D2659671A0013ED36 /* Assets.xcassets */; };
@@ -23,7 +22,6 @@
 		C186DC6826598BD00010D50E /* KeychainItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainItem.swift; sourceTree = "<group>"; };
 		C1DB5E51265967190013ED36 /* SignInWithApple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignInWithApple.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1DB5E54265967190013ED36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C1DB5E56265967190013ED36 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C1DB5E58265967190013ED36 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C1DB5E5B265967190013ED36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C1DB5E5D2659671A0013ED36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,7 +72,6 @@
 			children = (
 				C186DC65265979A30010D50E /* SignInWithApple.entitlements */,
 				C1DB5E54265967190013ED36 /* AppDelegate.swift */,
-				C1DB5E56265967190013ED36 /* SceneDelegate.swift */,
 				C1DB5E58265967190013ED36 /* LoginViewController.swift */,
 				C186DC66265980010010D50E /* ResultViewController.swift */,
 				C1DB5E5A265967190013ED36 /* Main.storyboard */,
@@ -156,7 +153,6 @@
 				C1DB5E59265967190013ED36 /* LoginViewController.swift in Sources */,
 				C1DB5E55265967190013ED36 /* AppDelegate.swift in Sources */,
 				C186DC6926598BD00010D50E /* KeychainItem.swift in Sources */,
-				C1DB5E57265967190013ED36 /* SceneDelegate.swift in Sources */,
 				C186DC67265980010010D50E /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,7 +230,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -289,7 +285,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

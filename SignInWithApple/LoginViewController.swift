@@ -89,10 +89,25 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
     }
     
     private func showResultViewController(appleIDCredential: ASAuthorizationAppleIDCredential) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let resultViewController = storyboard.instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController {
-            resultViewController.appleIDCredential = appleIDCredential
-            self.present(resultViewController, animated: true, completion: nil)
+        guard let viewController = self.presentingViewController as? ResultViewController
+            else { return }
+        
+        DispatchQueue.main.async {
+            let userIdentifier = appleIDCredential.user
+            let fullName = appleIDCredential.fullName
+            let email = appleIDCredential.email
+            
+            viewController.userIdentifierLabel.text = userIdentifier
+            if let givenName = fullName?.givenName {
+                viewController.givenNameLabel.text = givenName
+            }
+            if let familyName = fullName?.familyName {
+                viewController.familyNameLabel.text = familyName
+            }
+            if let email = email {
+                viewController.emailLabel.text = email
+            }
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -119,3 +134,14 @@ extension LoginViewController: ASAuthorizationControllerPresentationContextProvi
     
 }
 
+extension UIViewController {
+    
+    func showLoginViewController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+            loginViewController.modalPresentationStyle = .formSheet
+            loginViewController.isModalInPresentation = true
+            self.present(loginViewController, animated: true, completion: nil)
+        }
+    }
+}

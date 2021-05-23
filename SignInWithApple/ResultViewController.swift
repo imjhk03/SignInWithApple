@@ -12,15 +12,20 @@ final class ResultViewController: UIViewController {
     
     var appleIDCredential: ASAuthorizationAppleIDCredential?
 
-    @IBOutlet private weak var userIdentifierLabel: UILabel!
-    @IBOutlet private weak var givenNameLabel: UILabel!
-    @IBOutlet private weak var familyNameLabel: UILabel!
-    @IBOutlet private weak var emailLabel: UILabel!
-    @IBOutlet private weak var signOutButton: UIButton!
+    @IBOutlet weak var userIdentifierLabel: UILabel!
+    @IBOutlet weak var givenNameLabel: UILabel!
+    @IBOutlet weak var familyNameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var signOutButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        userIdentifierLabel.text = KeychainItem.currentUserIdentifier
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         fillInResults()
     }
     
@@ -51,6 +56,8 @@ final class ResultViewController: UIViewController {
         familyNameLabel.text = ""
         emailLabel.text = ""
         
-        self.dismiss(animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.showLoginViewController()
+        }
     }
 }
