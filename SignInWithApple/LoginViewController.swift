@@ -29,10 +29,8 @@ final class LoginViewController: UIViewController {
         request.requestedScopes = [.fullName, .email]
         
         let controller = ASAuthorizationController(authorizationRequests: [request])
-        
         controller.delegate = self
         controller.presentationContextProvider = self
-        
         controller.performRequests()
     }
 
@@ -43,13 +41,31 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         switch authorization.credential {
         case let appleIDCredential as ASAuthorizationAppleIDCredential:
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let resultViewController = storyboard.instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController {
-                resultViewController.appleIDCredential = appleIDCredential
-                self.present(resultViewController, animated: true, completion: nil)
-            }
+            let userIdentifier = appleIDCredential.user
+            
+            // Store the 'userIdentifier' in the keychain
+            saveUserInKeychain(userIdentifier)
+            
+            // Show the Apple ID credential information in the 'ResultViewController'
+            showResultViewController(appleIDCredential: appleIDCredential)
         default:
             break
+        }
+    }
+    
+    private func saveUserInKeychain(_ userIdentifier: String) {
+        do {
+            try KeychainItem(service: "me.jhk.SignInWithApple", account: "userIdentifier").saveItem(userIdentifier)
+        } catch {
+            print("Unable to save userIdentifier to keychain.")
+        }
+    }
+    
+    private func showResultViewController(appleIDCredential: ASAuthorizationAppleIDCredential) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let resultViewController = storyboard.instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController {
+            resultViewController.appleIDCredential = appleIDCredential
+            self.present(resultViewController, animated: true, completion: nil)
         }
     }
     
