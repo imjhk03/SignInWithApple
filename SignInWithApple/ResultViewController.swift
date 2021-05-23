@@ -43,4 +43,14 @@ final class ResultViewController: UIViewController {
         }
     }
 
+    @IBAction private func signOutButtonPressed(_ sender: UIButton) {
+        KeychainItem.deleteUserIdentifierFromKeychain()
+        
+        userIdentifierLabel.text = ""
+        givenNameLabel.text = ""
+        familyNameLabel.text = ""
+        emailLabel.text = ""
+        
+        self.dismiss(animated: true, completion: nil)
+    }
 }
